@@ -1,5 +1,5 @@
 # Web Service Scaffolding
----
+
 ## Purpose
 The aim of this repository is to provide a solid foundation for building
 a web service with [Slim 3](http://www.slimframework.com/) ([repo](https://github.com/slimphp/Slim))
