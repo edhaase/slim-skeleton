@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c> 
+	RewriteEngine On
+	RewriteBase /
+
+  RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+  RewriteCond %{HTTP:Authorization} .+
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+   
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php/$1 [L]
+ 
+  RewriteRule ^(.*)\.phar$ - [F]
+  RewriteRule ^(.*)\.lock$ - [F]
+</IfModule>
+
+php_value upload_max_filesize 128M
+php_value post_max_size 128M
+
+<files php.ini>
+  order deny,allow
+  deny from all
+</files>

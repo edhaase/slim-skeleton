@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpdoc>
+	<title>Web Service</title>
+	<parser>
+		<target>docs</target>
+		<default-package-name>Documentation</default-package-name>
+		<markers>
+			<item>TODO</item>
+			<item>FIXME</item>
+		</markers>
+		<extensions>
+  			<extension>php</extension>
+    	</extensions>
+	</parser>
+	<transformer>
+		<target>docs</target>
+	</transformer>
+	<transformations>
+		<template name='responsive' />
+	</transformations>
+	<files>
+		<file>config.example.php</file>
+		<file>app.php</file>
+		<directory>src</directory>
+		<ignore>vendor</ignore>
+		<ignore>pear-*</ignore>
+		<ignore>templates/*</ignore>
+		<ignore>Documentation/*</ignore>
+		<ignore>test*.php</ignore>
+		<ignore>Lexer.inc</ignore>
+	</files>
+</phpdoc>
