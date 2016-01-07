@@ -25,9 +25,7 @@
         "cs": "phpcs --standard=PSR2 src/",
         "cbf": "phpcbf --standard=PSR2 src/",
         "serve": "php -S 0.0.0.0:8888 -t ../public ../public/index.php",
-        "post-create-project-cmd": [
-            "php -r \"copy('config.example.php', 'config.php');\"",
-        ],
+        "post-create-project-cmd": "php -r \"copy('config.example.php', 'config.php');\"",
         "bootstrap": "@post-create-project-cmd"
     },
     "autoload": {
