@@ -27,7 +27,6 @@
         "serve": "php -S 0.0.0.0:8888 -t ../public ../public/index.php",
         "post-create-project-cmd": [
             "php -r \"copy('config.example.php', 'config.php');\"",
-            "codecept bootstrap"
         ],
         "bootstrap": "@post-create-project-cmd"
     },
