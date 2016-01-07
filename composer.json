@@ -3,6 +3,7 @@
     "description": "Scaffolding for a web service or application with Slim",
     "license": "MIT",
     "type": "project",
+    "keywords": ["slim", "skeleton"],
     "authors": [{
       "name": "Edward Haase",
       "email": "ehaasecode@gmail.com"
