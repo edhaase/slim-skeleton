@@ -11,7 +11,10 @@ $c['log'] = function ($container) {
 };
 
 $c['cacheDriver'] = function ($container) {
-    $options = array('ttl' => 3600, 'namespace' => md5(__file__));
+    $options = [
+        'ttl' => 3600,
+        'namespace' => md5(__file__),
+        ];
     $driver = new Stash\Driver\Apc();
     $driver->setOptions($options);
     return $driver;
