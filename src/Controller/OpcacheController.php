@@ -30,7 +30,7 @@ final class OpcacheController extends AbstractController
      */
     public function status(Request $req, Response $res)
     {
-        $res
+        return $res
             ->withStatus(200)
             ->withHeader('Content-type', 'application/json')
             ->write(json_encode(opcache_get_status(), JSON_PRETTY_PRINT));
@@ -41,7 +41,7 @@ final class OpcacheController extends AbstractController
      */
     public function clear(Request $req, Response $res)
     {
-        $res
+        return $res
             ->withStatus(200)
             ->withHeader('Content-type', 'application/json')
             ->write(json_encode(opcache_reset(), JSON_PRETTY_PRINT));

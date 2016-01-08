@@ -30,7 +30,7 @@ final class APCuController extends AbstractController
      */
     public function status(Request $req, Response $res)
     {
-        $res
+        return $res
             ->withStatus(200)
             ->withHeader('Content-type', 'application/json')
             ->write(json_encode(apcu_cache_info(), JSON_PRETTY_PRINT));
@@ -43,7 +43,7 @@ final class APCuController extends AbstractController
      */
     public function info(Request $req, Response $res)
     {
-        $res
+        return $res
             ->withStatus(200)
             ->withHeader('Content-type', 'application/json')
             ->write(json_encode(apcu_sma_info(), JSON_PRETTY_PRINT));
@@ -56,7 +56,7 @@ final class APCuController extends AbstractController
      */
     public function clear(Request $req, Response $res)
     {
-        $res
+        return $res
             ->withStatus(200)
             ->withHeader('Content-type', 'application/json')
             ->write(json_encode(apcu_clear_cache(), JSON_PRETTY_PRINT));
