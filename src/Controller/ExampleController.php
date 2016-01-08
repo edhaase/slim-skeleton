@@ -34,7 +34,7 @@ final class ExampleController extends AbstractController
     {
         $this->log->debug('ExampleController#action: Method entry');
 
-        $res
+        return $res
             ->withStatus(200)
             ->withHeader('Content-type', 'application/json')
             ->write(json_encode($args, JSON_PRETTY_PRINT));
