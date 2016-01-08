@@ -12,9 +12,9 @@ class AppContainer extends \Slim\Container
     {
         parent::__construct(
             $settings || [
-            'settings' => [
-            'displayErrorDetails' => true,
-            ]
+                'settings' => [
+                    'displayErrorDetails' => true,
+                ]
             ]
         );
         
@@ -24,6 +24,20 @@ class AppContainer extends \Slim\Container
         
         $this['log'] = function ($container) {
             return new \App\Service\Logger();
+        };
+        
+        $this['cacheDriver'] = function ($container) {
+            $options = [
+                'ttl' => 3600,
+                'namespace' => md5(__file__),
+                ];
+            $driver = new Stash\Driver\Apc();
+            $driver->setOptions($options);
+            return $driver;
+        };
+        
+        $this['cachePool'] = function ($container) {
+            return new Stash\Pool($container['cacheDriver']);
         };
     }
 }
