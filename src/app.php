@@ -7,15 +7,11 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Psr7Middlewares\Middleware;
 
-/**
- * Create Slim 3.* application, with container
- */
-$app = new \Slim\App(new \App\Lib\AppContainer());
-/*
- * For Slim < 3.1, (check dependencies if you have problems) uncomment
- * require('Lib/container.php');
- * $app = new \Slim\App($c);
- */
+$app = new \Slim\App(new \App\Lib\AppContainer([
+    'settings' => [
+        'displayErrorDetails' => true,
+    ]
+]));
 
 $app->add(Middleware::responseTime());
 $app->add(Middleware::TrailingSlash());

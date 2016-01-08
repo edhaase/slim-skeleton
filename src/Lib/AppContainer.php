@@ -8,19 +8,9 @@ namespace App\Lib;
 // Left here as a placeholder for how this will work.
 class AppContainer extends \Slim\Container
 {
-    public function __construct($settings = [])
+    public function __construct(array $settings = [])
     {
-        parent::__construct(
-            $settings || [
-                'settings' => [
-                    'displayErrorDetails' => true,
-                ]
-            ]
-        );
-        
-        $this['foundHandler'] = function () {
-            return new \Slim\Handlers\Strategies\RequestResponseArgs();
-        };
+        parent::__construct($settings);
         
         $this['log'] = function ($container) {
             return new \App\Service\Logger();
